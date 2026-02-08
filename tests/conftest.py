@@ -46,5 +46,5 @@ def populated_db(test_db, sample_profile, sample_attributes, sample_values):
     for attr in sample_attributes:
         db.upsert_attribute(test_db, attr)
     for val in sample_values:
-        db.upsert_values(test_db, val["attribute"], val["values"])
+        db.upsert_values(test_db, val["name"], val["values"])
     return test_db

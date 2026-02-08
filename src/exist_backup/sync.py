@@ -44,7 +44,7 @@ def run_sync(config, full=False):
 
     # 3. For each attribute, sync values
     for attr in attributes:
-        attr_name = attr["attribute"]
+        attr_name = attr["name"]
         try:
             last_date = db.get_last_sync_date(conn, attr_name)
 

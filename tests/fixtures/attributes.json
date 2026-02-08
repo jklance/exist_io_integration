@@ -1,6 +1,6 @@
 [
     {
-        "attribute": "steps",
+        "name": "steps",
         "label": "Steps",
         "group": {"name": "activity", "label": "Activity", "priority": 1},
         "priority": 1,
@@ -12,7 +12,7 @@
         "template": null
     },
     {
-        "attribute": "steps_active_min",
+        "name": "steps_active_min",
         "label": "Active minutes",
         "group": {"name": "activity", "label": "Activity", "priority": 1},
         "priority": 2,
@@ -24,7 +24,7 @@
         "template": null
     },
     {
-        "attribute": "sleep",
+        "name": "sleep",
         "label": "Time asleep",
         "group": {"name": "sleep", "label": "Sleep", "priority": 2},
         "priority": 1,
@@ -36,7 +36,7 @@
         "template": null
     },
     {
-        "attribute": "sleep_start",
+        "name": "sleep_start",
         "label": "Bedtime",
         "group": {"name": "sleep", "label": "Sleep", "priority": 2},
         "priority": 2,
@@ -48,7 +48,7 @@
         "template": null
     },
     {
-        "attribute": "mood",
+        "name": "mood",
         "label": "Mood",
         "group": {"name": "mood", "label": "Mood", "priority": 3},
         "priority": 1,
@@ -60,7 +60,7 @@
         "template": null
     },
     {
-        "attribute": "mood_note",
+        "name": "mood_note",
         "label": "Mood note",
         "group": {"name": "mood", "label": "Mood", "priority": 3},
         "priority": 2,
@@ -72,7 +72,7 @@
         "template": null
     },
     {
-        "attribute": "productive_min",
+        "name": "productive_min",
         "label": "Productive time",
         "group": {"name": "productivity", "label": "Productivity", "priority": 4},
         "priority": 1,
@@ -84,7 +84,7 @@
         "template": null
     },
     {
-        "attribute": "meditation",
+        "name": "meditation",
         "label": "Meditated",
         "group": {"name": "custom", "label": "Custom", "priority": 10},
         "priority": 1,

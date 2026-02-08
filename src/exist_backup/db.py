@@ -83,7 +83,7 @@ def upsert_attribute(conn, attr):
          manual, active, template, updated_at)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
         (
-            attr["attribute"],
+            attr["name"],
             attr["label"],
             attr["group"]["name"],
             attr["group"]["label"],

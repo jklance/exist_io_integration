@@ -33,8 +33,8 @@ class TestExistClient:
             "next": BASE_URL + "attributes/?page=2&limit=2",
             "previous": None,
             "results": [
-                {"attribute": "steps", "label": "Steps"},
-                {"attribute": "sleep", "label": "Sleep"},
+                {"name": "steps", "label": "Steps"},
+                {"name": "sleep", "label": "Sleep"},
             ],
         }
         page2 = {
@@ -42,7 +42,7 @@ class TestExistClient:
             "next": None,
             "previous": BASE_URL + "attributes/?page=1&limit=2",
             "results": [
-                {"attribute": "mood", "label": "Mood"},
+                {"name": "mood", "label": "Mood"},
             ],
         }
         responses.add(responses.GET, BASE_URL + "attributes/", json=page1, status=200)
@@ -50,8 +50,8 @@ class TestExistClient:
 
         attrs = client.get_attributes()
         assert len(attrs) == 3
-        assert attrs[0]["attribute"] == "steps"
-        assert attrs[2]["attribute"] == "mood"
+        assert attrs[0]["name"] == "steps"
+        assert attrs[2]["name"] == "mood"
 
     @responses.activate
     def test_get_attribute_values(self, client):
