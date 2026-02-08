@@ -1,0 +1,29 @@
+[project]
+name = "exist-backup"
+version = "0.1.0"
+description = "Back up Exist.io data to SQLite and export as Obsidian markdown"
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2.31",
+    "click>=8.1",
+    "jinja2>=3.1",
+]
+
+[project.scripts]
+exist-backup = "exist_backup.cli:cli"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/exist_backup"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "responses>=0.25",
+]

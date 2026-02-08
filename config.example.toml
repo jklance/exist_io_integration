@@ -1,0 +1,9 @@
+[auth]
+token = ""   # or use EXIST_TOKEN env var
+
+[sync]
+database = "/data/exist.db"
+
+[export]
+output_dir = "/export"
+template = "daily"  # "daily", "weekly", or path to custom .md.j2

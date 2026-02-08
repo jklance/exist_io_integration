@@ -1,0 +1,18 @@
+---
+date: {{ date }}
+tags: [exist]
+---
+
+# Exist.io {{ date }}
+
+{% for group_name, group_attrs in groups.items() %}
+## {{ group_name }}
+
+{% for attr in group_attrs %}
+- **{{ attr.label }}**: {{ attr.formatted_value }}
+{% endfor %}
+
+{% endfor %}
+{% if tags %}
+**Tags**: {{ tags | join(', ') }}
+{% endif %}

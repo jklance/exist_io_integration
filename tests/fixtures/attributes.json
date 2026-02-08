@@ -1,0 +1,98 @@
+[
+    {
+        "attribute": "steps",
+        "label": "Steps",
+        "group": {"name": "activity", "label": "Activity", "priority": 1},
+        "priority": 1,
+        "value_type": 0,
+        "value_type_description": "Integer",
+        "service": {"name": "googlefit", "label": "Google Fit"},
+        "manual": false,
+        "active": true,
+        "template": null
+    },
+    {
+        "attribute": "steps_active_min",
+        "label": "Active minutes",
+        "group": {"name": "activity", "label": "Activity", "priority": 1},
+        "priority": 2,
+        "value_type": 3,
+        "value_type_description": "Duration (minutes)",
+        "service": {"name": "googlefit", "label": "Google Fit"},
+        "manual": false,
+        "active": true,
+        "template": null
+    },
+    {
+        "attribute": "sleep",
+        "label": "Time asleep",
+        "group": {"name": "sleep", "label": "Sleep", "priority": 2},
+        "priority": 1,
+        "value_type": 3,
+        "value_type_description": "Duration (minutes)",
+        "service": {"name": "googlefit", "label": "Google Fit"},
+        "manual": false,
+        "active": true,
+        "template": null
+    },
+    {
+        "attribute": "sleep_start",
+        "label": "Bedtime",
+        "group": {"name": "sleep", "label": "Sleep", "priority": 2},
+        "priority": 2,
+        "value_type": 4,
+        "value_type_description": "Time of day (min from midnight)",
+        "service": {"name": "googlefit", "label": "Google Fit"},
+        "manual": false,
+        "active": true,
+        "template": null
+    },
+    {
+        "attribute": "mood",
+        "label": "Mood",
+        "group": {"name": "mood", "label": "Mood", "priority": 3},
+        "priority": 1,
+        "value_type": 8,
+        "value_type_description": "Scale (1-9)",
+        "service": null,
+        "manual": true,
+        "active": true,
+        "template": null
+    },
+    {
+        "attribute": "mood_note",
+        "label": "Mood note",
+        "group": {"name": "mood", "label": "Mood", "priority": 3},
+        "priority": 2,
+        "value_type": 2,
+        "value_type_description": "String",
+        "service": null,
+        "manual": true,
+        "active": true,
+        "template": null
+    },
+    {
+        "attribute": "productive_min",
+        "label": "Productive time",
+        "group": {"name": "productivity", "label": "Productivity", "priority": 4},
+        "priority": 1,
+        "value_type": 3,
+        "value_type_description": "Duration (minutes)",
+        "service": {"name": "rescuetime", "label": "RescueTime"},
+        "manual": false,
+        "active": true,
+        "template": null
+    },
+    {
+        "attribute": "meditation",
+        "label": "Meditated",
+        "group": {"name": "custom", "label": "Custom", "priority": 10},
+        "priority": 1,
+        "value_type": 7,
+        "value_type_description": "Boolean",
+        "service": null,
+        "manual": true,
+        "active": true,
+        "template": null
+    }
+]
