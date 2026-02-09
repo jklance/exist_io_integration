@@ -1,0 +1,16 @@
+{
+    "username": "testuser",
+    "first_name": "Test",
+    "last_name": "User",
+    "bio": "",
+    "url": "",
+    "avatar": "",
+    "timezone": "America/New_York",
+    "imperial_distance": false,
+    "imperial_weight": false,
+    "imperial_temperature": false,
+    "imperial_energy": false,
+    "imperial_liquid": false,
+    "trial": false,
+    "delinquent": false
+}

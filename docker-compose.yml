@@ -1,0 +1,9 @@
+services:
+  exist-backup:
+    build: .
+    volumes:
+      - ./config:/config
+      - ./data:/data
+      - /path/to/obsidian/vault:/export
+    environment:
+      - EXIST_TOKEN=${EXIST_TOKEN}

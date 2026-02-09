@@ -1,0 +1,17 @@
+---
+date: {{ date_from }} to {{ date_to }}
+tags: [exist, weekly]
+---
+
+# Exist.io Weekly Summary: {{ date_from }} to {{ date_to }}
+
+{% for group_name, group_data in groups.items() %}
+## {{ group_name }}
+
+| Attribute | Min | Max | Avg |
+|-----------|-----|-----|-----|
+{% for attr in group_data %}
+| {{ attr.label }} | {{ attr.min }} | {{ attr.max }} | {{ attr.avg }} |
+{% endfor %}
+
+{% endfor %}

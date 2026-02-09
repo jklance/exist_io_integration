@@ -208,3 +208,8 @@ __marimo__/
 
 # Planning
 Claude-Assisted Design for Exist.io Integration App.md
+
+# Local config and data (may contain tokens)
+config.toml
+data/
+export/
