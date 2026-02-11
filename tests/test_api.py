@@ -74,6 +74,61 @@ class TestExistClient:
         assert values[0]["value"] == "8432"
 
     @responses.activate
+    def test_get_attributes_with_values(self, client):
+        responses.add(
+            responses.GET,
+            BASE_URL + "attributes/with-values/",
+            json={
+                "count": 2,
+                "next": None,
+                "previous": None,
+                "results": [
+                    {
+                        "name": "steps",
+                        "label": "Steps",
+                        "group": {"name": "activity", "label": "Activity", "priority": 1},
+                        "priority": 1,
+                        "value_type": 0,
+                        "value_type_description": "Integer",
+                        "service": {"name": "googlefit", "label": "Google Fit"},
+                        "manual": False,
+                        "active": True,
+                        "template": None,
+                        "values": [
+                            {"date": "2024-12-02", "value": 6201},
+                            {"date": "2024-12-01", "value": 8432},
+                        ],
+                    },
+                    {
+                        "name": "mood",
+                        "label": "Mood",
+                        "group": {"name": "mood", "label": "Mood", "priority": 3},
+                        "priority": 1,
+                        "value_type": 8,
+                        "value_type_description": "Scale (1-9)",
+                        "service": None,
+                        "manual": True,
+                        "active": True,
+                        "template": None,
+                        "values": [
+                            {"date": "2024-12-02", "value": 7},
+                            {"date": "2024-12-01", "value": 5},
+                        ],
+                    },
+                ],
+            },
+            status=200,
+        )
+        results = list(client.get_attributes_with_values(days=2, date_max="2024-12-02"))
+        assert len(results) == 2
+        assert results[0]["name"] == "steps"
+        assert len(results[0]["values"]) == 2
+        assert results[1]["name"] == "mood"
+        # Verify query params
+        assert "days=2" in responses.calls[0].request.url
+        assert "date_max=2024-12-02" in responses.calls[0].request.url
+
+    @responses.activate
     def test_rate_limit_retry(self, client):
         responses.add(
             responses.GET,
