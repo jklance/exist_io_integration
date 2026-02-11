@@ -126,6 +126,19 @@ def get_last_sync_date(conn, attribute_name):
     return row["max_date"] if row and row["max_date"] else None
 
 
+def get_oldest_last_sync_date(conn):
+    """Get the oldest 'most recent date' across all synced attributes.
+
+    Returns the minimum of MAX(date) per attribute, indicating how far back
+    the most stale attribute is. Returns None if no values exist.
+    """
+    row = conn.execute(
+        "SELECT MIN(max_date) as oldest FROM "
+        "(SELECT MAX(date) as max_date FROM attribute_values GROUP BY attribute_name)"
+    ).fetchone()
+    return row["oldest"] if row and row["oldest"] else None
+
+
 def get_global_last_sync(conn):
     """Get the timestamp of the last successful sync."""
     row = conn.execute(

@@ -48,6 +48,19 @@ class ExistClient:
         """Fetch all attribute metadata (paginated)."""
         return list(self._paginate(BASE_URL + "attributes/"))
 
+    def get_attributes_with_values(self, days=1, date_max=None):
+        """Fetch all attributes with recent values in bulk (paginated).
+
+        Each result includes attribute metadata plus a 'values' array.
+        Max 31 days per request.
+
+        Yields individual attribute dicts.
+        """
+        params = {"days": min(days, 31)}
+        if date_max:
+            params["date_max"] = str(date_max)
+        yield from self._paginate(BASE_URL + "attributes/with-values/", params)
+
     def get_attribute_values(self, attribute_name, date_max=None, limit=100):
         """Fetch historical values for one attribute (paginated).
 
